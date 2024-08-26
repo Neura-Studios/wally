@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   backend:
-    image: 386138156553.dkr.ecr.us-west-2.amazonaws.com/wally-backend:latest
     env_file: wally-registry-backend/.env
     build:
       context: .
