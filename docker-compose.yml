@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: wally-registry-frontend/Dockerfile
+      args:
+        - WALLY_API_URL=${WALLY_FRONTEND_API_URL}
     ports:
       - "${WALLY_FRONTEND_HOST_PORT:-8001}:8000"
     links:

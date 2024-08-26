@@ -7,6 +7,6 @@ COPY . /app
 RUN npm install
 
 ARG WALLY_API_URL
-RUN cd /app && npm run build
+RUN npm run build
 
 CMD ["node", "build/server/server.js"]
