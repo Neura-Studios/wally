@@ -10,6 +10,8 @@ services:
         - WALLY_BACKEND_BUILD_FEATURES=${WALLY_BACKEND_BUILD_FEATURES}
     ports:
       - "${WALLY_BACKEND_HOST_PORT:-8000}:8000"
+    extra_hosts:
+      - "169.254.169.254:169.254.169.254"
 
   frontend:
     env_file: wally-registry-frontend/.env

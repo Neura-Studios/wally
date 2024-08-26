@@ -11,7 +11,7 @@ RUN apt-get install -y ca-certificates libssl-dev pkg-config && rm -rf /var/lib/
 # advantage of incremental compilation, which makes development much faster.
 #
 # We must set the USER environment variable here or else cargo init will fail.
-RUN USER=root cargo new wally-registry-backend
+RUN cargo new wally-registry-backend
 COPY wally-registry-backend/Cargo.toml /usr/app/wally-registry-backend/
 COPY Cargo.toml Cargo.lock /usr/app/
 COPY src/ /usr/app/src/
