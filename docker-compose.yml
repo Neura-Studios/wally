@@ -22,6 +22,6 @@ services:
     image: 386138156553.dkr.ecr.us-west-2.amazonaws.com/wally-frontend:latest
     env_file: wally-registry-frontend/.env
     ports:
-      - "8001:8000"
+      - "${WALLY_FRONTEND_HOST_PORT:-8001}:8000"
     links:
       - backend
