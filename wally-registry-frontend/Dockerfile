@@ -2,7 +2,7 @@ FROM node:14.15
 WORKDIR /app
 EXPOSE 8000
 
-COPY . .
+COPY . /app
 
 RUN npm install
 
