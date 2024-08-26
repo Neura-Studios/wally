@@ -14,7 +14,7 @@ services:
   frontend:
     env_file: wally-registry-frontend/.env
     build:
-      context: .
+      context: wally-registry-frontend/
       dockerfile: wally-registry-frontend/Dockerfile
     ports:
       - "${WALLY_FRONTEND_HOST_PORT:-8001}:8000"
