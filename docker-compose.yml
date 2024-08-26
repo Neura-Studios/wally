@@ -13,8 +13,10 @@ services:
       - "${WALLY_BACKEND_HOST_PORT:-8000}:8000"
 
   frontend:
-    image: 386138156553.dkr.ecr.us-west-2.amazonaws.com/wally-frontend:latest
     env_file: wally-registry-frontend/.env
+    build:
+      context: .
+      dockerfile: wally-registry-frontend/Dockerfile
     ports:
       - "${WALLY_FRONTEND_HOST_PORT:-8001}:8000"
     links:
