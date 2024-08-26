@@ -8,9 +8,15 @@ services:
       context: .
       dockerfile: wally-registry-backend/Dockerfile
       args:
+        - WALLY_storage=${WALLY_BACKEND_storage}
+        - WALLY_index_url=${WALLY_BACKEND_index_url}
+        - WALLY_auth=${WALLY_BACKEND_auth}
+        - WALLY_github_token=${WALLY_BACKEND_github_token}
+        - AWS_REGION_NAME=${AWS_REGION_NAME}
+        - AWS_REGION_ENDPOINT=${AWS_REGION_ENDPOINT}
         - WALLY_BACKEND_BUILD_FEATURES=${WALLY_BACKEND_BUILD_FEATURES}
     ports:
-      - "8000:8000"
+      - "${WALLY_BACKEND_HOST_PORT:-8000}:8000"
 
   frontend:
     image: 386138156553.dkr.ecr.us-west-2.amazonaws.com/wally-frontend:latest
